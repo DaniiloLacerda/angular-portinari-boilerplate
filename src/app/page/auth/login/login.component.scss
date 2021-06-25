@@ -1,0 +1,45 @@
+.base {
+  height: 100%;
+  width: auto;
+}
+.background {
+  height: 100%;
+  width: 100%;
+}
+
+.login {
+  height: 65%;
+  width: 29%;
+  position: absolute;
+  left: 40px;
+  top: 165px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {
+  margin: 1em;
+  width: 55%;
+  height: 5vh;
+  padding-left: 25px;
+  font-size: 15px;
+  font-weight: 650;
+  align-self: center;
+}
+
+.input::placeholder {
+  font-weight: 650;
+  font-family: 'Titillium Web';
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.button {
+  bottom: 17%;
+  width: 60px;
+  float: right;
+  position: relative;
+  height: 50px;
+  left: 80%;
+}

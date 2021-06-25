@@ -1,0 +1,30 @@
+<div class="base">
+  <div>
+    <img src="../../../../assets/background.jpg" class="background" />
+  </div>
+  <div class="login">
+    <po-input
+      class="input"
+      id="inputLogin"
+      [(ngModel)]="inputUser"
+      type="text"
+      placeholder="Usuário"
+      maxlength="20"
+      (keyup.enter)="submitLogin()"
+    ></po-input>
+    <po-input
+      class="input"
+      id="inputPassword"
+      [(ngModel)]="inputPassword"
+      type="password"
+      placeholder="Senha"
+      maxlength="20"
+      (keyup.enter)="submitLogin()"
+    ></po-input>
+    <po-button
+      class="button button-login"
+      p-label="Entrar"
+      (p-click)="submitLogin()"
+    ></po-button>
+  </div>
+</div>

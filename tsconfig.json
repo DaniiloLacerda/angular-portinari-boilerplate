@@ -12,16 +12,53 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": ["es2018", "dom"]
+    "strictPropertyInitialization": false,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@service/*": [
+        "src/app/shared/services/authService/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@shared/base/*": [
+        "src/app/shared/model/*",
+        "src/app/shared/service/*",
+        "src/app/shared/components/base-resource/*",
+      ],
+      "@shared/components/*": [
+        "src/app/shared/index.d.ts"
+      ],
+      "@page/*": [
+        "src/app/page/home/*",
+        "src/app/page/auth/*",
+      ],
+      "@interface/*": [
+        "src/app/shared/interface/*",
+      ],
+      "@enum/*": [
+        "src/app/shared/enum/*",
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ]
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+    "strictTemplates": true,
+  },
 }
