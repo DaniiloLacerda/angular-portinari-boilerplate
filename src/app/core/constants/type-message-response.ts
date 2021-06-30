@@ -33,7 +33,7 @@ export const SUCCESS_203: MessageResponse = {
 export const SUCCESS_204: MessageResponse = {
   type: 'success',
   code: 204,
-  message: 'Sua requisição não retornou conteudo.',
+  message: 'Sua requisição não retornou conteúdo.',
 };
 
 export const ERROR_400: MessageResponse = {

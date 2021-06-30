@@ -1,5 +1,3 @@
-// @ts-ignore: Unreachable code error
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PoMenuItem } from '@po-ui/ng-components';
@@ -32,10 +30,7 @@ export class MenuService {
     shortLabel: 'Cadastros',
   };
 
-  private subMenuRegistrations: Array<PoMenuItem> = [
-    { label: 'Categorias', link: 'category' },
-    { label: 'Produtos', link: 'product' },
-  ];
+  private subMenuRegistrations: Array<PoMenuItem> = [{ label: 'Filmes', link: 'movies' }];
 
   private menuReports: PoMenuItem = {
     label: 'Relatórios',

@@ -11,6 +11,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
   },
+  {
+    path: 'movies',
+    loadChildren: () => import('@page/movie.module').then((m) => m.MovieModule),
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
   { path: '**', redirectTo: '' },
 ];
 

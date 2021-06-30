@@ -51,7 +51,6 @@ export abstract class BaseResourceComponent
     this.authService.currentUser.subscribe((user) => (this.currentUser = user));
     this.route.data.subscribe((data) => (this.pageTitle = data.name || ''));
     this.route.snapshot.url.forEach((url) => {
-      // @ts-ignore: Unreachable code error
       if (ActionsUrl[url.path.toUpperCase()]) {
         this.currentAction = url.path;
       }
@@ -61,9 +60,7 @@ export abstract class BaseResourceComponent
   }
 
   ngAfterContentChecked(): void {
-    // Carrega as Actions Page caso tenham sido informadas pelo filho
     this.setActions();
-    // Carrega as configurações default do componente.
     this.setCurrentAction();
   }
 
@@ -329,7 +326,6 @@ export abstract class BaseResourceComponent
         } else {
           itemToSearch.contains = this.validBoolValue(form[k]);
         }
-        // @ts-ignore: Unreachable code error
         bodySearch[`${k}`] = itemToSearch;
         const field = fields.find((f: { property: string }) => f.property == k);
         this.filterChips.push(

@@ -1,22 +1,21 @@
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthService } from './auth.service';
 import {
+  ERROR_400,
+  ERROR_401,
+  ERROR_404_LOGIN,
+  ERROR_406,
+  ERROR_409,
   ERROR_500,
+  ERROR_502,
+  SUCCESS_200,
   SUCCESS_200_LOGIN,
   SUCCESS_201,
   SUCCESS_203,
   SUCCESS_204,
-  ERROR_400,
-  ERROR_401,
-  ERROR_406,
-  ERROR_502,
-  SUCCESS_200,
-  ERROR_409,
-  ERROR_404_LOGIN,
-  SUCCESS_200_CHANGED_PASSWORD,
 } from '@core/constants/type-message-response';
-import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { MessageResponse } from '@core/model/message-response.model';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -59,9 +58,6 @@ export class MessageResponseService {
             case 'token':
               message = SUCCESS_200_LOGIN;
               break;
-            case 'changePassword':
-              message = SUCCESS_200_CHANGED_PASSWORD;
-              break;
           }
         }
       } else if (this.currentMethod.localeCompare('GET') == 0) {
@@ -88,7 +84,6 @@ export class MessageResponseService {
         Object.keys(this.errorResponse.error).find((k) => k.localeCompare('errorMessage') == 0)
       ) {
         message.message = '';
-        // criar um interpretador para traduzir as mensagens de erro.
         message.detailedMessage = this.errorResponse.error?.errorMessage;
       }
     }

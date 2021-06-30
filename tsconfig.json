@@ -18,6 +18,7 @@
     "target": "es2017",
     "module": "es2020",
     "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     "lib": [
       "es2018",
       "dom"
@@ -35,7 +36,7 @@
       "@shared/base/*": [
         "src/app/shared/model/*",
         "src/app/shared/service/*",
-        "src/app/shared/components/base-resource/*",
+        "src/app/shared/components/base-resource/*"
       ],
       "@shared/components/*": [
         "src/app/shared/index.d.ts"
@@ -43,22 +44,23 @@
       "@page/*": [
         "src/app/page/home/*",
         "src/app/page/auth/*",
+        "src/app/page/movie/*"
       ],
       "@interface/*": [
-        "src/app/shared/interface/*",
+        "src/app/shared/interface/*"
       ],
       "@enum/*": [
-        "src/app/shared/enum/*",
+        "src/app/shared/enum/*"
       ],
       "@environments/*": [
         "src/environments/*"
       ]
-    },
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true,
-  },
+    "strictTemplates": true
+  }
 }
