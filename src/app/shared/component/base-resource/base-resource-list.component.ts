@@ -129,9 +129,11 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel>
   }
 
   public async onDelete() {
-    if (this.itemToRemove.id) {
-      await this.resourceService.delete(this.itemToRemove.id).then(() => {
-        this.resources = this.resources.filter((element) => element.id != this.itemToRemove.id);
+    if (this.itemToRemove._id) {
+      await this.resourceService.delete(this.itemToRemove._id).then(() => {
+        this.resources = this.resources.filter(
+          (element) => element._id != this.itemToRemove._id
+        );
       });
     } else {
       if (this.itemToRemove.code) {
@@ -154,11 +156,11 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel>
   }
 
   onEdit(row: any) {
-    this.redirectTo(this.componentUrl, row.id, this.ACTION_EDIT);
+    this.redirectTo(this.componentUrl, row._id, this.ACTION_EDIT);
   }
 
   viewResource(row: any) {
-    this.redirectTo(this.componentUrl, row.id, this.ACTION_VIEW);
+    this.redirectTo(this.componentUrl, row._id, this.ACTION_VIEW);
   }
 
   private loadActions() {

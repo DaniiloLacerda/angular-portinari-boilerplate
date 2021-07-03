@@ -1,9 +1,4 @@
-import {
-  PoDynamicFormField,
-  PoDynamicViewField,
-  PoTableColumn,
-  PoDynamicFieldType,
-} from '@po-ui/ng-components';
+import { PoDynamicFormField, PoDynamicViewField, PoTableColumn } from '@po-ui/ng-components';
 import { BaseResourceModel } from '../base-resource/base-resource.model';
 
 export class MovieConfigModel extends BaseResourceModel {
@@ -11,63 +6,59 @@ export class MovieConfigModel extends BaseResourceModel {
     super();
   }
   protected formBuild(): PoDynamicFormField[] {
-    return [];
+    return [
+      {
+        property: 'name',
+        label: 'Nome',
+        minLength: 3,
+        gridColumns: 6,
+        gridSmColumns: 12,
+        required: true,
+        pattern: '[^0-9]*',
+        errorMessage: 'O nome deve ser preenchido com letras.',
+        maxLength: 60,
+      },
+      {
+        property: 'gender',
+        label: 'Gênero',
+        minLength: 3,
+        gridColumns: 6,
+        gridSmColumns: 12,
+        required: true,
+        pattern: '[^0-9]*',
+        maxLength: 60,
+      },
+      {
+        property: 'producer',
+        label: 'Produtor',
+        minLength: 3,
+        gridColumns: 6,
+        gridSmColumns: 12,
+        required: true,
+        pattern: '[^0-9]*',
+        maxLength: 60,
+      },
+    ];
   }
   protected viewBuild(): PoDynamicViewField[] {
     return [];
   }
 
-  protected viewStoreQuantityBuild(): PoDynamicViewField[] {
-    return [
-      {
-        property: 'quantityTotal',
-        label: 'Quantidade Total',
-        gridColumns: 3,
-        gridSmColumns: 12,
-      },
-    ];
-  }
-
-  get gridOrderStoreQuantity(): Array<PoTableColumn> {
-    return this.viewStoreQuantityBuild();
-  }
-
   protected gridBuild(): PoTableColumn[] {
     return [
       {
-        property: 'status',
-        type: 'label',
-        width: '20%',
-        labels: [
-          {
-            value: 'ACTIVE',
-            color: 'color-02',
-            label: 'ATIVO',
-          },
-          {
-            value: 'COMPLETED',
-            color: 'color-10',
-            label: 'COMPLETO',
-          },
-          {
-            value: 'CANCELED',
-            color: 'color-07',
-            label: 'CANCELADO',
-          },
-        ],
+        property: 'name',
+        width: '30%',
       },
       {
-        property: 'date',
-        label: 'Data',
-        width: '20%',
-        type: PoDynamicFieldType.Date,
+        property: 'gender',
+        width: '30%',
+        label: 'Gênero',
       },
       {
-        property: 'total',
-        label: 'Total ',
-        width: '50%',
-        type: PoDynamicFieldType.Currency,
-        format: 'BRL',
+        property: 'producer',
+        width: '40%',
+        label: 'Produtor',
       },
     ];
   }

@@ -1,1 +1,11 @@
-<po-page-default p-title="Filmes" [p-actions]="pageActions"> </po-page-default>
+<po-page-list [p-title]="pageTitle" [p-actions]="actionsPage">
+  <po-table
+    [p-actions]="actionsGrid"
+    [p-columns]="columns"
+    [p-items]="resources"
+    [p-literals]="literals"
+    [p-striped]="true"
+    [p-sort]="true"
+  >
+  </po-table>
+</po-page-list>

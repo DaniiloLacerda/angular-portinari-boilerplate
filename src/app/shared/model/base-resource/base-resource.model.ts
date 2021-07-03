@@ -6,7 +6,7 @@ import {
 } from '@po-ui/ng-components';
 
 export abstract class BaseResourceModel {
-  public id?: string;
+  public _id?: string;
 
   protected abstract formBuild(): Array<PoDynamicFormField>;
   get fieldsForm(): Array<PoDynamicFormField> {

@@ -51,7 +51,7 @@ export class AuthService extends BaseNotificationComponent {
 
   get isTokenExpired(): boolean {
     const date = this.getTokenExpirationDate();
-    if (date === undefined || date.toString() === 'Invalid Date') {
+    if (date && date.toString() === 'Invalid Date') {
       return true;
     }
     return date.valueOf() <= new Date().valueOf();
@@ -66,7 +66,6 @@ export class AuthService extends BaseNotificationComponent {
     return await this.http
       .post<any>(`${this.apiPath}/token`, body, this.header)
       .pipe(
-        timeout(20000),
         map((resp) => {
           if (resp) {
             const jwtDecoded = jwtDecode<IAuth>(resp.token);

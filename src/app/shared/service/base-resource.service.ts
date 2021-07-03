@@ -110,7 +110,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> implement
     const data = Utils.instanceOf<T>(this.type, resource);
     return await this.http
       .put(
-        `${!url ? this.apiPath : url}/${resource.id}`,
+        `${!url ? this.apiPath : url}/${resource._id}`,
         this.jsonDataToResource(this.cleanIDOfChild(data)),
         this.header
       )
@@ -126,7 +126,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> implement
     const retorno: T[] = [];
     await Promise.all(
       resources.map(async (x) => {
-        if (!x.id) {
+        if (!x._id) {
           await this.create(x).then((resp) => retorno.push(resp));
         } else {
           await this.update(x).then((resp) => retorno.push(resp));
@@ -173,7 +173,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> implement
   }
 
   protected cleanIDOfChild(data: T, isCreated?: boolean): T {
-    data.id = undefined;
+    data._id = undefined;
     return data;
   }
 }

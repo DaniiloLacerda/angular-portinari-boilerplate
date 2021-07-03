@@ -1,0 +1,9 @@
+<po-page-default [p-title]="pageTitle" [p-actions]="pageActions">
+  <po-dynamic-form
+    (p-form)="getForm($event)"
+    p-auto-focus="code"
+    [p-fields]="fields"
+    [p-value]="resource"
+  >
+  </po-dynamic-form>
+</po-page-default>

@@ -1,0 +1,10 @@
+<po-page-default [p-title]="pageTitle" [p-actions]="pageActions">
+  <po-dynamic-form
+    [p-fields]="fields"
+    [p-load]="loadResource.bind(this)"
+    [p-value]="this.resource"
+    (p-form)="getForm($event)"
+    [p-validate]=""
+  >
+  </po-dynamic-form>
+</po-page-default>

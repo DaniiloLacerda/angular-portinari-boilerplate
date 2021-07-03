@@ -1,5 +1,4 @@
 import { AfterContentChecked, AfterContentInit, Component, Injector } from '@angular/core';
-import { LoginData } from '@interface/login.interface';
 import { BaseResourceAuthComponent } from 'src/app/shared/component/base-resource/base-resource-auth.component';
 
 @Component({
