@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { MovieService } from '@page/shared/movie.service';
 
 import { PoPageAction } from '@po-ui/ng-components';
@@ -15,5 +15,14 @@ export class ReportComponent extends BaseResourceReportComponent<MovieModel> {
 
   constructor(protected injector: Injector, protected service: MovieService) {
     super(injector, new MovieModel(), MovieModel, service);
+    this.loadValues();
+  }
+
+  async clickButton() {
+    this.onSavePDF(this.userConfigs);
+  }
+
+  private async loadValues() {
+    this.resourceList = await this.service.getAll();
   }
 }

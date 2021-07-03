@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -44,7 +43,8 @@
       "@page/*": [
         "src/app/page/home/*",
         "src/app/page/auth/*",
-        "src/app/page/movie/*"
+        "src/app/page/movie/*",
+        "src/app/page/report/*"
       ],
       "@interface/*": [
         "src/app/shared/interface/*"

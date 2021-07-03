@@ -1,1 +1,12 @@
-<po-page-default p-title="Report" [p-actions]="pageActions"> </po-page-default>
+<po-page-default [p-title]="pageTitle" [p-actions]="pageActions">
+  <po-table [p-columns]="columns" [p-items]="resourceList" [p-striped]="true" [p-sort]="true">
+  </po-table>
+  <po-divider p-label="Exportar"> </po-divider>
+  <po-button
+    p-icon="po-icon po-icon-pdf"
+    p-label="PDF"
+    p-type="default"
+    (p-click)="clickButton()"
+  >
+  </po-button>
+</po-page-default>
