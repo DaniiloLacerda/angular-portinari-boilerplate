@@ -76,7 +76,23 @@ export class MovieConfigModel extends BaseResourceModel {
   }
 
   protected reportBuild(): PoTableColumn[] {
-    return [];
+    return [
+      {
+        property: 'name',
+        label: 'Nome',
+        width: '30%',
+      },
+      {
+        property: 'gender',
+        width: '30%',
+        label: 'Gênero',
+      },
+      {
+        property: 'producer',
+        width: '40%',
+        label: 'Produtor',
+      },
+    ];
   }
 
   public advancedSearchBuild(): PoDynamicFormField[] {

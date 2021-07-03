@@ -17,6 +17,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
   },
+  {
+    path: 'report',
+    loadChildren: () => import('@page/report.module').then((m) => m.ReportModule),
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
   { path: '**', redirectTo: '' },
 ];
 

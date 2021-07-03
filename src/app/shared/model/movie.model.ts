@@ -5,16 +5,8 @@ export class MovieModel extends MovieConfigModel {
     public _id?: string,
     public name?: string,
     public gender?: string,
-    public producer?: string,
-    public type?: MovieTypeEnum,
-    public userId?: string,
-    public active?: boolean
+    public producer?: string
   ) {
     super();
   }
-}
-
-export enum MovieTypeEnum {
-  MOVIE,
-  SERIE,
 }
