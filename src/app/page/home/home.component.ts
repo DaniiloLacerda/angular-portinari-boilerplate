@@ -13,6 +13,8 @@ export class HomeComponent {
 
   constructor() {
     this.currentUser = JSON.parse(localStorage.getItem(this.CURRENT_USER) as string);
-    this.welcomeMessage = `Olá ${this.currentUser.name}!`;
+    this.welcomeMessage = this.currentUser.name
+      ? `Olá ${this.currentUser.name}!`
+      : 'Seja Bem Vindo(a)';
   }
 }
