@@ -1,45 +1,39 @@
 .base {
-  height: 100%;
-  width: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('../../../../assets/background.jpg');
+  height: 100vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
-.background {
-  height: 100%;
-  width: 100%;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
 }
 
 .login {
-  height: 65%;
-  width: 29%;
-  position: absolute;
-  left: 40px;
-  top: 165px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50vh 30vh 20vh;
+}
+
+.loginForm {
+  grid-row-start: 2;
+  grid-row-end: 3;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.input {
-  margin: 1em;
-  width: 55%;
-  height: 5vh;
-  padding-left: 25px;
-  font-size: 15px;
-  font-weight: 650;
-  align-self: center;
-}
-
-.input::placeholder {
-  font-weight: 650;
-  font-family: 'Titillium Web';
-  font-size: 15px;
-  padding-left: 20px;
-}
-
-.button {
-  bottom: 17%;
-  width: 60px;
-  float: right;
-  position: relative;
-  height: 50px;
-  left: 80%;
+::ng-deep {
+  .loginForm .po-input {
+    width: 100%;
+    border-radius: 20px 5px;
+  }
 }
