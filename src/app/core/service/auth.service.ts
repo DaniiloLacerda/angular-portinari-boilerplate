@@ -23,7 +23,7 @@ export class AuthService extends BaseNotificationComponent {
     },
   };
 
-  private currentUserSubject: BehaviorSubject<UserModel>;
+  private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<UserModel>;
   private apiPath: string;
 
@@ -106,7 +106,6 @@ export class AuthService extends BaseNotificationComponent {
     localStorage.removeItem(this.CURRENT_USER);
     localStorage.removeItem(this.TIME_EXPIRE);
     localStorage.removeItem(this.KEY_USER);
-    //@ts-ignore
     this.currentUserSubject.next(undefined);
     this.router
       .navigateByUrl('login', { skipLocationChange: true })
