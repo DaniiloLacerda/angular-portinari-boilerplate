@@ -106,7 +106,8 @@ export class AuthService extends BaseNotificationComponent {
     localStorage.removeItem(this.CURRENT_USER);
     localStorage.removeItem(this.TIME_EXPIRE);
     localStorage.removeItem(this.KEY_USER);
-    this.currentUserSubject.next(new UserModel());
+    //@ts-ignore
+    this.currentUserSubject.next(undefined);
     this.router
       .navigateByUrl('login', { skipLocationChange: true })
       .then(() => this.router.navigate(['login']));
