@@ -1,9 +1,9 @@
 # Angular Portinari Boilerplate
 
+![Screenshot](docs/home.jpeg)
+
 Model of project to work as base to work with Angular and portinari Io.
 This project was creates using this technologies.
-
-![Screenshot](docs/home.jpeg)
 
 [Angular CLI 12.1.0](https://github.com/angular/angular-cli)
 
